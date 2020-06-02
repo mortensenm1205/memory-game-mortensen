@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]
 
-    cardArray.sort(() => 0.5 - Math.random());
+    // cardArray.sort(() => 0.5 - Math.random());
 
     // First selecting our class grid element
     const grid = document.querySelector('.grid');
@@ -99,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // If the cards match, we want to show the user visually that they found the match and the cards can now be removed
             cards[optionOneId].setAttribute('src', 'images/white.png');
             cards[optionTwoId].setAttribute('src', 'images/white.png');
+            // This removes the flipCard function from the 'card' element since it's now a match
+            cards[optionOneId].removeEventListener('click', flipCard);
+            cards[optionTwoId].removeEventListener('click', flipCard);
             // Also we need to alert the user that they found a match
             alert('You found a match');
             // Adding this to our cardsWon array to use later
