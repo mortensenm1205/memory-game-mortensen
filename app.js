@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // List of Card Options
+    // You do want the list of card options to have a matching pair so that the game can actually be won 
     const cardArray = [
         {
             name: 'cheeseburger',
@@ -15,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'images/hotdog.png'
         },
         {
-            name: 'ice-cream',
-            img: 'images/ice-cream.png'
+            name: 'fries',
+            img: 'images/fries.png'
         },
         {
             name: 'milkshake',
@@ -27,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'images/hotdog.png'
         },
         {
-            name: 'pizza',
-            img: 'images/pizza.png'
+            name: 'milkshake',
+            img: 'images/milkshake.png'
         },
         {
             name: 'cheeseburger',
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]
 
+    // This now makes the game replayable
     // cardArray.sort(() => 0.5 - Math.random());
 
     // First selecting our class grid element
@@ -122,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // This is where our cardsWon array is used
         resultsDisplay.textContent = cardsWon.length;
         // This condition will then run to determine if the game is won or not
-        // The idea with this Memory game is that you only need more than half to win
+        // Since all listed cards will have a pair, you only need half of the total cards list 
         if (cardsWon.length === cardArray.length/2) {
             resultsDisplay.textContent = 'Congrats! You won!';
         }
