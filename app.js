@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // First selecting our class grid element
     const grid = document.querySelector('.grid');
     // Selecting the span element to then display the amount of matches to the user
-    const resultsDisplay = document.getElementById('result');
+    const results = document.getElementById('result');
     // Having two seperate arrays allows for better maniuplation
     // This an array for the current cards selected. But only has name values and doesn't go beyond 2 items.
     var cardsChosen = [];
@@ -120,13 +120,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // So we need to reset both card chosen arrays to empty
         cardsChosen = [];
         cardsChosenId = [];
-        // Also as the player is playing we need to display the score of matches they have
+        resultsDisplay();
+    }
+
+    function resultsDisplay() {
+        // As the player is playing we need to display the score of matches they have
         // This is where our cardsWon array is used
-        resultsDisplay.textContent = cardsWon.length;
+        results.textContent = cardsWon.length;
         // This condition will then run to determine if the game is won or not
         // Since all listed cards will have a pair, you only need half of the total cards list 
         if (cardsWon.length === cardArray.length/2) {
-            resultsDisplay.textContent = 'Congrats! You won!';
+            results.textContent = 'Congrats! You won!';
         }
     }
 
