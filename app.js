@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsDisplay();
     }
 
+    // This function is simply to display the results of cards matched
     function resultsDisplay() {
         // As the player is playing we need to display the score of matches they have
         // This is where our cardsWon array is used
