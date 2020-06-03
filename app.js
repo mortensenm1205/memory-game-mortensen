@@ -35,7 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'cheeseburger',
             img: 'images/cheeseburger.png'
         }
-    ]
+    ];
+
+    var increasedCardArray = [];
 
     // This now makes the game replayable
     // cardArray.sort(() => 0.5 - Math.random());
@@ -44,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     // Selecting the span element to then display the amount of matches to the user
     const results = document.getElementById('result');
+    // Selecting the button element to assign the inceaseCards function to
+    const increaseButton = document.getElementById('increase-btn');
     // Having two seperate arrays allows for better maniuplation
     // This an array for the current cards selected. But only has name values and doesn't go beyond 2 items.
     var cardsChosen = [];
@@ -51,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var cardsChosenId = [];
     // This array will be used to display the results to the user as the play, and will help determine when the game is won
     var cardsWon = [];
+    
 
     // Next, create your board
     function createBoard() {
@@ -135,10 +140,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function increaseCards() {
+        for(let i = 0; i < (cardArray.length * 2); i++) {
+            increasedCardArray.push(cardArray[i]);
+            console.log(increasedCardArray);
+        }
+    }
+
 
 
 
     // Running the game
     createBoard();
+
+    // Event listener for increased card count
+    increaseButton.addEventListener('click', increaseCards);
 })
 
