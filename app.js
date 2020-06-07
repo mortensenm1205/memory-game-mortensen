@@ -142,8 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function increaseCards() {
         for(let i = 0; i < (cardArray.length * 2); i++) {
-            increasedCardArray.push(cardArray[i]);
-            console.log(increasedCardArray);
+            // Currently only creating new img elements, max to 16
+            // Same like createBoard()
+            var increasedCard = document.createElement('img');
+            increasedCard.setAttribute('src', 'images/blank.png');
+            increasedCard.setAttribute('data-id', i);
+            increasedCard.addEventListener('click', flipCard);
+            grid.appendChild(increasedCard);
         }
     }
 
